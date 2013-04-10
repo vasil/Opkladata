@@ -4,19 +4,19 @@ Opkladata na Vasil i Gemo
 
 I ova godina kako i prethodnite prodolzuvame so kladbata na Vasil i Aleksandar.
 
-Ke se vrsi merenje na temperaturata vo tekot na denot 
+1. Ke se vrsi merenje na temperaturata vo tekot na denot 
  * 08 casot
  * 13 casot
  * 17 casot
  
-Slednite denovi 11, 12, 13 April 2013.
+2. Slednite denovi: 11, 12, 13 April 2013.
 
-Sekoj den ke ima pobednik.
+3. Sekoj den ke ima pobednik.
 
-**Uslovot e ?**
+**A uslovot e?**
 
-sredna vrednost od trite merni tocki 
-
+_sredna vrednost od trite merni tocki:_
+```
 if (srednaVrednost == 10) {
    Nereseno
 } else if (srednaVrednost < 10) {
@@ -24,9 +24,11 @@ if (srednaVrednost == 10) {
 } else {
    Pobednik--> Vase
 }
+```
 
-Nagrada--> "Добиваш газоза и кафе."
+Nagrada: "Добиваш газоза и кафе."
 
 
-_Sudija: P. Lazarov_
+_Sudija: 
+P. Lazarov_
 * * *
