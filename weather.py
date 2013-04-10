@@ -1,13 +1,9 @@
+import json
 from datetime import datetime
-
 from google.appengine.api import urlfetch 
-from xml.dom import minidom
 
-WEATHER_URL = 'http://www.google.com/ig/api?weather=%s' 
+WEATHER_URL = 'http://api.openweathermap.org/data/2.1/find/name?q=%s' 
 CITY = 'Skopje'
- 
-data = lambda tag: tag.getAttribute('data') 
-
 
 class Weather(object):
     @classmethod
@@ -16,11 +12,12 @@ class Weather(object):
         result = urlfetch.fetch(url)
         
         if result.status_code == 200:
-            dom = minidom.parseString(result.content)
-            temp_c = dom.getElementsByTagName('temp_c')[0]
-            current_datetime = dom.getElementsByTagName('current_date_time')[0]
+            json_data = json.loads(result.content)
             
+            temp_k = json.loads(json_data)['list']['main']['temp']
+            temp_url = json.loads(json_data)['list'][0]['url']
+            current_datetime = dom.getElementsByTagName('current_date_time')[0]
             curent_datetime = (datetime.strptime(data(current_datetime)[0:18], 
                                                  '%Y-%m-%d %H:%M:%S'))
-            temperature = int(data(temp_c)) 
-            return (curent_datetime, temperature)
+            temperature = int(temp_k) - 272.15;
+            return (curent_datetime, temperature, temp_url)

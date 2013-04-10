@@ -1,4 +1,5 @@
 *~
+*.kate-swp
 *.py[cod]
 
 # C extensions
