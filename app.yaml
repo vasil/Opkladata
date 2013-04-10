@@ -1,0 +1,14 @@
+application: opkladata
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /measure/.*
+  script: opkladata.py
+- url: /_ah/mail/.+
+  script: opkladata.py
+  login: admin
+
+inbound_services:
+- mail

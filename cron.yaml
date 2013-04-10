@@ -1,0 +1,16 @@
+cron:
+- description: First measure
+  url: /measure/1
+  schedule: 11,12,13 of april 08:00
+  timezone: Europe/Skopje
+
+- description: Second measure
+  url: /measure/2
+  schedule: 11,12,13 of april 13:00
+  timezone: Europe/Skopje
+
+- description: Third measure
+  url: /measure/3
+  schedule: 11,12,13 of april 17:00
+  timezone: Europe/Skopje
+ 

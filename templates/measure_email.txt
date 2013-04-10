@@ -1,0 +1,9 @@
+Hi, 
+
+The temperature measured at {{time}} is {{temperature}} Celsius Degrees. 
+{% if mean %}
+Mean temperature for {{day}}th: {{ mean }}°C
+{% endif %}
+Best Regards,
+http://www.google.com/search?q=weather+skopje
+(http://www.google.com/ig/api?weather=Skopje)
