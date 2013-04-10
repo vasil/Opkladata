@@ -39,7 +39,7 @@ class BaseHandler(webapp.RequestHandler):
 
 class MeasureHandler(BaseHandler):
     def get(self, time):
-        (_, measured_temp) = Weather.get_temp('Skopje')
+        (_, measured_temp, city_url) = Weather.get_temp('Skopje')
         record = Record()
         record.temperature = measured_temp
         record.put()
@@ -47,7 +47,8 @@ class MeasureHandler(BaseHandler):
         todays_records = Record.all().filter('date', today).fetch(3)
         template_values = {'temperature': measured_temp,
                            'order': ORDER[int(time)],
-                           'time': TIME[int(time)]}
+                           'time': TIME[int(time)],
+                           'city_url': city_url}
         if len(todays_records) >= 3:
             sum = reduce(lambda a, b: a+b.temperature, todays_records, 0)
             template_values['mean'] = round(float(sum) / len(todays_records))
